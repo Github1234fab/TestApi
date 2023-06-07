@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Kanit:wght@100;200;300;400;500;600;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" />
+    <title>Météo</title>
+  </head>
+  <body>
+    <div class="wrapper_indicateur">
+      <input class="input" type="text" placeholder="Nom de la ville" />
+      <h2 class="town indicateur"></h2>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_weather container" >
+        <div class="banner" data-collapse="false">Prévision</div>
+        <div class="wrapper_data_weather">
+          <p class="weather indicateur"></p>
+          <span class="icon"></span>
+        </div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_temp container" >
+        <div class="banner" data-collapse="false">Température</div>
+        <div class="wrapper_data">
+          <p>Température : <span class="temp indicateur"></span></p>
+          <p>Température ressentie : <span class="tempHuman indicateur"></span></p>
+        </div>
+      </div> 
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_hours container" >
+        <div class="banner" data-collapse="false">Heures</div>
+        <div class="wrapper_data"  >
+          <p>Heure actuelle : <span class="hour indicateur"></span></p>
+          <p>Heure de levé du soleil : <span class="upSun indicateur"></span></p>
+          <p>Heure de couhé du soleil : <span class="downSun indicateur"></span></p>
+        </div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_humidity container" >
+        <div class="banner" data-collapse="false">Taux d'humidité</div>
+        <div class="wrapper_data"  >
+          <p>Taux d'humidité : <span class="humidity indicateur"></span></p>
+        </div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_uv container" >
+        <div class="banner data-collapse="false"">indice UV</div>
+        <div class="wrapper_data"  >
+          <p>Indice UV : <span class="uv indicateur"></span></p>
+        </div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_wind container" >
+        <div class="banner" data-collapse="false">Vitesse du vent</div>
+        <div class="wrapper_data" >
+          <p>Vitesse du vent : <span class="wind indicateur"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

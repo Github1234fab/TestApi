@@ -1,0 +1,110 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+Body {
+  background-color: rgb(50, 50, 50);
+  /* background-image: url(./assets/pngegg\ \(62\).png); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: top center; */
+}
+.input {
+  margin-top: 20px;
+  background-color: transparent;
+  font-size: 14px;
+  box-shadow: inset 2px 2px 5px rgb(0, 0, 0);
+  color: rgb(234, 234, 234);
+  text-align: center;
+  font-family: roboto condensed;
+  padding: 10px;
+  text-transform: capitalize;
+}
+.indicateur {
+  color: rgb(234, 234, 234);
+  font-family: roboto condensed;
+  font-size: 1.1em;
+  text-transform: capitalize;
+}
+.wrapper_indicateur {
+  height: 100%;
+  width: 100vw;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.town {
+  font-size: 40px;
+  font-family: Kanit;
+  color: rgb(234, 245, 12);
+  /* text-align: center; */
+}
+img {
+  height: 40px;
+  width: 40px;
+}
+p {
+  color: rgb(245, 177, 204);
+  font-size: 14px;
+  font-family: roboto condensed;
+  font-weight: 200;
+  width: 100%;
+}
+.container_weather,
+.container_temp,
+.container_hours,
+.container_humidity,
+.container_uv,
+.container_wind {
+  /* box-shadow: inset 2px 2px 5px rgb(0, 0, 0); */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  color: rgb(234, 234, 234);
+  text-align: center;
+  font-family: roboto condensed;
+  padding: 10px;
+  height: 30px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  align-items: center;
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(63, 63, 63);
+  color: white;
+  font-size: 1em;
+  width: 100%;
+  height: 2em;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.wrapper_data {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+}
+.wrapper_data_weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  height: 70px;
+}
+.icon {
+  margin-top: -24px;
+}
+.expanded {
+  height: 100%;
+}
