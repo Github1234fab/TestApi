@@ -106,6 +106,19 @@ input.addEventListener("change", (event) => {
       let lat = data[0].lat;
       let lon = data[0].lon;
 
+      // +++++++++++++++++++++++++++++++++++++++++ REQUETE UNSPLASH POUR PHOTO DE LA VILLE
+
+      fetch(`https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6dpP6ZcR-gr6EVNQLNZ3oND9ou7ucZL48kpa_zHpaVo`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          let img = document.querySelector(".town_img");
+          img.src = data.results[0].urls.full;
+        })
+        .catch((error) => {
+          console.error("Erreur:", error);
+        });
+
       // +++++++++++++++++++++++++++++++++++++++++ REQUETE POUR OBTENIR LES INFOS AVEC DANS L'URL, LA LAT. ET LA LONG.
 
       let UrlForecast = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&lang=fr&units=metric&appid=1f1721082468b559881d1a385be60f39`;
@@ -159,58 +172,6 @@ input.addEventListener("change", (event) => {
 });
 
 
-// let banner = document.querySelectorAll(".banner");
-// banner.forEach((e) => {
- 
-//   e.addEventListener("click", function () {
-//      console.log("ok");
-//     this.dataset.collapse = this.dataset.collapse == "false" ? "true" : "false";
-//     let wrapperData = document.querySelectorAll(".wrapperData");
-//     wrapperData.forEach(el => {
-//         if (this.dataset.collapse == "true") {
-//           el.classList.add("expanded");
-//         } else {
-//          el.classList.remove("expanded");
-//         }
-//     })
-  
-//   });
-// }
-// );
-
-let banners = document.querySelectorAll(".banner");
-
-// banners.forEach((banner) => {
-//   banner.addEventListener("click", function () {
-//     console.log("ok");
-//     this.dataset.collapse = this.dataset.collapse == "false" ? "true" : "false";
-//     let container = document.querySelectorAll(".container");
-//     container.forEach((element) => {
-//       if (this.dataset.collapse == "true") {
-//         element.classList.add("expanded");
-//       } else {
-//         element.classList.remove("expanded");
-//       }
-//     });
-//   });
-// });
-
-
-// let containers = document.querySelectorAll(".container");
-
-// containers.forEach((container) => {
-//   let banner = container.querySelector(".banner");
-
-//   banner.addEventListener("click", function () {
-//     console.log("ok");
-//     let wrapperData = container.querySelector(".wrapper_data");
-//     if (wrapperData) {
-//       let isExpanded = container.classList.contains("expanded");
-//       container.classList.toggle("expanded", !isExpanded);
-//     }
-//   });
-// });
-
 let containers = document.querySelectorAll(".container");
 
 containers.forEach((container) => {
@@ -218,5 +179,12 @@ containers.forEach((container) => {
     console.log("ok");
     let isExpanded = this.classList.contains("expanded");
     this.classList.toggle("expanded", !isExpanded);
+
   });
 });
+
+let inputDelete = document.querySelector(".delete");
+inputDelete.addEventListener("click", function() {
+  input.value = "";
+})
+
