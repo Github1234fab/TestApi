@@ -93,8 +93,24 @@
 
 let input = document.querySelector(".input");
 input.addEventListener("change", (event) => {
+  // +++++++++++++++++++++++++++++++++++++++++ REQUETE UNSPLASH POUR PHOTO DE LA VILLE
+
+ 
+  
   event.preventDefault();
   let inputValue = input.value;
+
+   fetch(`https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6dpP6ZcR-gr6EVNQLNZ3oND9ou7ucZL48kpa_zHpaVo`)
+     .then((response) => response.json())
+     .then((data) => {
+       console.log(data);
+       let img = document.querySelector(".town_img");
+       img.src = data.results[0].urls.full;
+     })
+     .catch((error) => {
+       console.error("Erreur:", error);
+     });
+  
 
   let UrlCoordinates = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=5&appid=1f1721082468b559881d1a385be60f39`;
 
@@ -105,19 +121,6 @@ input.addEventListener("change", (event) => {
       let town = data[0].name;
       let lat = data[0].lat;
       let lon = data[0].lon;
-
-      // +++++++++++++++++++++++++++++++++++++++++ REQUETE UNSPLASH POUR PHOTO DE LA VILLE
-
-      fetch(`https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6dpP6ZcR-gr6EVNQLNZ3oND9ou7ucZL48kpa_zHpaVo`)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          let img = document.querySelector(".town_img");
-          img.src = data.results[0].urls.full;
-        })
-        .catch((error) => {
-          console.error("Erreur:", error);
-        });
 
       // +++++++++++++++++++++++++++++++++++++++++ REQUETE POUR OBTENIR LES INFOS AVEC DANS L'URL, LA LAT. ET LA LONG.
 
@@ -149,7 +152,6 @@ input.addEventListener("change", (event) => {
             let divWeatherDescription = document.createElement("div");
             divWeatherDescription.innerHTML = dayOfWeek;
             divWeatherDescription.classList.add("div_container8days");
-            
 
             container8days.appendChild(divWeatherDescription);
 

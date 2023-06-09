@@ -22,7 +22,7 @@ Body {
 .indicateur {
   color: rgb(234, 234, 234);
   font-family: roboto condensed;
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-transform: capitalize;
   text-align: center;
 }
@@ -85,7 +85,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, rgb(36, 33, 33), transparent);
+  background: linear-gradient(to bottom, rgb(255, 146, 44), transparent);
   box-shadow: 0px 0px 5px rgb(39, 39, 39) inset;
   color: white;
   font-size: 0.9em;
@@ -94,6 +94,9 @@ p {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+}
+.banner:hover{
+  transform: translateX(2px);
 }
 .wrapper_data {
   padding: 10px;
@@ -114,12 +117,12 @@ p {
   width: 100%;
   align-items: center;
   align-content: center;
-  background: linear-gradient(to bottom, rgb(51, 51, 51) 10%, transparent);
+  background: linear-gradient(to bottom, rgb(75, 7, 7) 10%, transparent);
   gap: 10px;
-   transition: 2s ease-in-out;
+  transition: .300s ease-in-out;
 }
 .wrapper_data_weather:hover{
-background: linear-gradient(to bottom, rgb(8, 73, 143) 10%, transparent);
+transform: scale(1.1);
 }
 .icon {
   margin-top: -18px;
@@ -196,6 +199,7 @@ background: linear-gradient(to bottom, rgb(8, 73, 143) 10%, transparent);
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 100%;
 }
 .container_1day h2 {
   color: white;
