@@ -95,22 +95,19 @@ let input = document.querySelector(".input");
 input.addEventListener("change", (event) => {
   // +++++++++++++++++++++++++++++++++++++++++ REQUETE UNSPLASH POUR PHOTO DE LA VILLE
 
- 
-  
   event.preventDefault();
   let inputValue = input.value;
 
-   fetch(`https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6dpP6ZcR-gr6EVNQLNZ3oND9ou7ucZL48kpa_zHpaVo`)
-     .then((response) => response.json())
-     .then((data) => {
-       console.log(data);
-       let img = document.querySelector(".town_img");
-       img.src = data.results[0].urls.full;
-     })
-     .catch((error) => {
-       console.error("Erreur:", error);
-     });
-  
+  fetch(`https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6dpP6ZcR-gr6EVNQLNZ3oND9ou7ucZL48kpa_zHpaVo`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let img = document.querySelector(".town_img");
+      img.src = data.results[0].urls.full;
+    })
+    .catch((error) => {
+      console.error("Erreur:", error);
+    });
 
   let UrlCoordinates = `https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=5&appid=1f1721082468b559881d1a385be60f39`;
 
@@ -140,27 +137,27 @@ input.addEventListener("change", (event) => {
             let weatherDescription = dailyData.weather[0].description;
             let weatherDailyIcon = dailyData.weather[0].icon;
 
-            // Récupérer la date correspondante
             let timestamp = dailyData.dt;
             let date = new Date(timestamp * 1000);
 
-            // Obtenir le nom du jour de la semaine et la date
             let options = { weekday: "long", month: "long", day: "numeric" };
             let dayOfWeek = date.toLocaleDateString("fr-FR", options);
 
-            // Créer la div pour la prévision avec le nom du jour de la semaine et la date
-            let divWeatherDescription = document.createElement("div");
-            divWeatherDescription.innerHTML = dayOfWeek;
-            divWeatherDescription.classList.add("div_container8days");
-
-            container8days.appendChild(divWeatherDescription);
+            let divWeatherDate = document.createElement("div");
+            divWeatherDate.innerHTML = dayOfWeek;
+            divWeatherDate.classList.add("div_container8days");
+            container8days.appendChild(divWeatherDate);
 
             // +++++++++++++++++++++++++++++++++++++++++ CRÉATION DES ICONS
 
             let divWeatherIcon = document.createElement("img");
             divWeatherIcon.src = "http://openweathermap.org/img/wn/" + weatherDailyIcon + "@2x.png";
-            //  divWeatherDescription.classList.add("div_container8days");
-            divWeatherDescription.appendChild(divWeatherIcon);
+            divWeatherDate.appendChild(divWeatherIcon);
+
+               let h4WeatherDescription = document.createElement("h4");
+               h4WeatherDescription.innerHTML = weatherDescription;
+               h4WeatherDescription.classList.add("div_weatherDescription");
+              divWeatherDate.appendChild(h4WeatherDescription);
           }
 
           let weather = data.current.weather[0].description;
