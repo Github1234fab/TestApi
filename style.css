@@ -116,12 +116,16 @@ p {
   align-content: center;
   background: linear-gradient(to bottom, rgb(51, 51, 51) 10%, transparent);
   gap: 10px;
+   transition: 2s ease-in-out;
+}
+.wrapper_data_weather:hover{
+background: linear-gradient(to bottom, rgb(8, 73, 143) 10%, transparent);
 }
 .icon {
   margin-top: -18px;
 }
 .expanded {
-  height: 220px;
+  height: 300px;
   transition: height 0.85s;
 }
 .container_town_img {
@@ -181,6 +185,11 @@ p {
   padding: 20px;
   border: solid 1px rgb(198, 198, 198);
   background: linear-gradient(to bottom, rgb(51, 51, 51), transparent);
+  transition: .200s ease-in-out;
+}
+.div_container8days:hover{
+   background: linear-gradient(to bottom, rgb(57, 28, 28), transparent);
+   transform: scale(1.1);
 }
 
 .container_1day {

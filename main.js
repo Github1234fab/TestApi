@@ -149,6 +149,7 @@ input.addEventListener("change", (event) => {
             let divWeatherDescription = document.createElement("div");
             divWeatherDescription.innerHTML = dayOfWeek;
             divWeatherDescription.classList.add("div_container8days");
+            
 
             container8days.appendChild(divWeatherDescription);
 
