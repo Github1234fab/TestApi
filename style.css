@@ -7,7 +7,6 @@ Body {
   background-color: rgb(50, 50, 50);
 }
 .input {
-  margin-top: 20px;
   background-color: transparent;
   font-size: 14px;
   box-shadow: inset 2px 2px 5px rgb(0, 0, 0);
@@ -23,8 +22,9 @@ Body {
 .indicateur {
   color: rgb(234, 234, 234);
   font-family: roboto condensed;
-  font-size: 1.1em;
+  font-size: 1.5em;
   text-transform: capitalize;
+  text-align: center;
 }
 .wrapper_indicateur {
   height: 100%;
@@ -56,7 +56,7 @@ p {
   font-weight: 200;
   width: 100%;
 }
-.container_weather,
+
 .container_temp,
 .container_hours,
 .container_humidity,
@@ -70,11 +70,15 @@ p {
   height: 50px;
   transition: height 0.95s;
   overflow: hidden;
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   background-color: transparent;
   align-items: center;
+}
+.container_weather{
+   height: auto;
+   width: 100%;
 }
 .banner {
   display: flex;
@@ -86,8 +90,8 @@ p {
   color: white;
   font-size: 0.9em;
   width: 100%;
-  height: 2em;
-  padding: 15px;
+  height: auto;
+  padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
 }
@@ -96,7 +100,8 @@ p {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  width: 100%;
+  width: auto;
+  height: auto;
   align-items: center;
   align-content: center;
   background: linear-gradient(to bottom, rgb(51, 51, 51), transparent);
@@ -109,14 +114,14 @@ p {
   width: 100%;
   align-items: center;
   align-content: center;
-  background: linear-gradient(to bottom, rgb(51, 51, 51), transparent);
+  background: linear-gradient(to bottom, rgb(51, 51, 51) 10%, transparent);
   gap: 10px;
 }
 .icon {
   margin-top: -18px;
 }
 .expanded {
-  height: 180px;
+  height: 220px;
   transition: height 0.85s;
 }
 .container_town_img {
@@ -134,8 +139,9 @@ p {
 .town_img {
   position: fixed;
   height: 100vh;
-  width: 100vw;
+  width: 800px;
   opacity: 0.5;
+  border: none;
 }
 .container_input {
   /* gap: 10px; */
@@ -150,11 +156,44 @@ p {
   margin-left: 10px;
   margin-top: 10px;
 }
-
-
-@media screen and (max-width:768px){
-  .banner{
-    width: 100%;
-  }
+.container_days_forecast {
+  display: flex;
+  flex-direction: column;
 }
-  
+.container_days_forecast h2 {
+  color: white;
+  font-family: roboto condensed;
+}
+.container_8days {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  gap: 5px;
+}
+.div_container8days {
+  color: rgb(201, 201, 201);
+  font-family: roboto condensed;
+  font-size: 0.8em;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border: solid 1px rgb(198, 198, 198);
+  background: linear-gradient(to bottom, rgb(51, 51, 51), transparent);
+}
+
+.container_1day {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.container_1day h2 {
+  color: white;
+  font-family: roboto condensed;
+}
+
+.container_datasDay {
+  display: flex;
+  gap: 5px;
+}

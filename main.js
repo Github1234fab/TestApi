@@ -127,11 +127,44 @@ input.addEventListener("change", (event) => {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+
+          // +++++++++++++++++++++++++++++++++++++++++ ITÉRATION SUR L'OBJET DAILY POUR RÉCUPÉRER LES PRÉVISIONS À 7 JOURS  ET ICONS (8 JOURS - CELUI EN COURS)
+
+          let container8days = document.querySelector(".container_8days");
+          container8days.innerHTML = "";
+          for (let i = 1; i < data.daily.length; i++) {
+            let dailyData = data.daily[i];
+            let weatherDescription = dailyData.weather[0].description;
+            let weatherDailyIcon = dailyData.weather[0].icon;
+
+            // Récupérer la date correspondante
+            let timestamp = dailyData.dt;
+            let date = new Date(timestamp * 1000);
+
+            // Obtenir le nom du jour de la semaine et la date
+            let options = { weekday: "long", month: "long", day: "numeric" };
+            let dayOfWeek = date.toLocaleDateString("fr-FR", options);
+
+            // Créer la div pour la prévision avec le nom du jour de la semaine et la date
+            let divWeatherDescription = document.createElement("div");
+            divWeatherDescription.innerHTML = dayOfWeek;
+            divWeatherDescription.classList.add("div_container8days");
+
+            container8days.appendChild(divWeatherDescription);
+
+            // +++++++++++++++++++++++++++++++++++++++++ CRÉATION DES ICONS
+
+            let divWeatherIcon = document.createElement("img");
+            divWeatherIcon.src = "http://openweathermap.org/img/wn/" + weatherDailyIcon + "@2x.png";
+            //  divWeatherDescription.classList.add("div_container8days");
+            divWeatherDescription.appendChild(divWeatherIcon);
+          }
+
           let weather = data.current.weather[0].description;
           let weatherIcon = data.current.weather[0].icon;
           let iconDom = document.createElement("img");
-          iconDom.style.height = "70px";
-          iconDom.style.width = "70px";
+          iconDom.style.height = "120px";
+          iconDom.style.width = "120px";
           iconDom.src = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
           let weatherIconSpan = document.querySelector(".icon");
           weatherIconSpan.innerHTML = "";
@@ -171,7 +204,6 @@ input.addEventListener("change", (event) => {
     .catch((err) => console.error(err));
 });
 
-
 let containers = document.querySelectorAll(".container");
 
 containers.forEach((container) => {
@@ -179,12 +211,10 @@ containers.forEach((container) => {
     console.log("ok");
     let isExpanded = this.classList.contains("expanded");
     this.classList.toggle("expanded", !isExpanded);
-
   });
 });
 
 let inputDelete = document.querySelector(".delete");
-inputDelete.addEventListener("click", function() {
+inputDelete.addEventListener("click", function () {
   input.value = "";
-})
-
+});
