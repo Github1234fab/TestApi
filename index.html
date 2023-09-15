@@ -16,14 +16,96 @@
    
     <div class="wrapper_indicateur">
 
-     <div class="container_input">
-      <input class="input" type="text" placeholder="Nom de la ville"></input>
-      <span class="delete"><i class="fa-solid fa-delete-left "></i></span>
-      </div>
+    
       <h2 class="town indicateur"></h2>
       <div class="container_town_img">
         <img class="town_img" src="" alt="">
       </div>
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 1 DAY FORECAST -->
+
+ <div class="container_input">
+      <input class="input" type="text" placeholder="Nom de la ville"></input>
+      <span class="delete"><i class="fa-solid fa-delete-left "></i></span>
+      </div>
+
+<div class="container_1day">
+
+  
+
+  <h2>Aujourd'hui</h2>
+ 
+
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FORECAST -->
+
+
+   <div class="container_weather" >
+        <!-- <div class="banner" data-collapse="false">Prévision</div> -->
+        <div class="wrapper_data_weather">
+          <p class="weather indicateur"></p>
+          <span class="icon"></span>
+         
+        </div>
+          <div class="container_datasDay">
+
+ <div class="container_temp" >
+        <!-- <div class="banner" data-collapse="false">Température</div> -->
+        <div class="wrapper_data">
+          <h5>Température <i class="fa-solid fa-temperature-three-quarters icons"></i></h5>
+          <p>Mesurée : <span class="temp indicateur"></span></p>
+          <p>Ressentie : <span class="tempHuman indicateur"></span></p>
+        </div>
+      </div> 
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_hours " >
+        <!-- <div class="banner" data-collapse="false">Heures</div> -->
+        <div class="wrapper_data"  >
+         <h5>Heure<i class="fa-solid fa-clock icons"></i></h5>
+          <p>Actuelle : <span class="hour indicateur"></span></p>
+          <p>Levé du soleil : <span class="upSun indicateur"></span></p>
+          <p>Couhé du soleil : <span class="downSun indicateur"></span></p>
+        </div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_humidity " >
+        <!-- <div class="banner" data-collapse="false">Taux d'humidité</div> -->
+        <div class="wrapper_data"  >
+            <h5>Humidité<i class="fa-solid fa-droplet icons"></i></h5>
+          <p>Taux d'humidité : <span class="humidity indicateur"></span></p>
+        </div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_uv " >
+        <!-- <div class="banner data-collapse="false"">indice UV</div> -->
+        <div class="wrapper_data"  >
+           <h5>UV<i class="fa-solid fa-sun icons"></i></h5>
+          <p>Indice UV : <span class="uv indicateur"></span></p>
+        </div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <div class="container_wind " >
+        <!-- <div class="banner" data-collapse="false">Vitesse du vent</div> -->
+        <div class="wrapper_data" >
+           <h5>Vent<i class="fa-solid fa-wind icons"></i></h5>
+          <p>Vitesse du vent : <span class="wind indicateur"></span></p>
+        </div>
+      </div>
+</div>
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DATAS-->
+    
+
 
 
 
@@ -38,73 +120,6 @@
 
  <!-- <div class="div_forecast"></div> -->
 </div>
-</div>
-
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 1 DAY FORECAST -->
-
-
-<div class="container_1day">
-  <h2>Aujourd'hui</h2>
-
-  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FORECAST -->
-
-
-   <div class="container_weather container" >
-        <!-- <div class="banner" data-collapse="false">Prévision</div> -->
-        <div class="wrapper_data_weather">
-          <p class="weather indicateur"></p>
-          <span class="icon"></span>
-        </div>
-      </div>
-
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DATAS-->
-      <div class="container_datasDay">
-
- <div class="container_temp container" >
-        <div class="banner" data-collapse="false">Température</div>
-        <div class="wrapper_data">
-          <p>Température : <span class="temp indicateur"></span></p>
-          <p>Température ressentie : <span class="tempHuman indicateur"></span></p>
-        </div>
-      </div> 
-
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-      <div class="container_hours container" >
-        <div class="banner" data-collapse="false">Heures</div>
-        <div class="wrapper_data"  >
-          <p>Heure actuelle : <span class="hour indicateur"></span></p>
-          <p>Heure de levé du soleil : <span class="upSun indicateur"></span></p>
-          <p>Heure de couhé du soleil : <span class="downSun indicateur"></span></p>
-        </div>
-      </div>
-
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-      <div class="container_humidity container" >
-        <div class="banner" data-collapse="false">Taux d'humidité</div>
-        <div class="wrapper_data"  >
-          <p>Taux d'humidité : <span class="humidity indicateur"></span></p>
-        </div>
-      </div>
-
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-      <div class="container_uv container" >
-        <div class="banner data-collapse="false"">indice UV</div>
-        <div class="wrapper_data"  >
-          <p>Indice UV : <span class="uv indicateur"></span></p>
-        </div>
-      </div>
-
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-      <div class="container_wind container" >
-        <div class="banner" data-collapse="false">Vitesse du vent</div>
-        <div class="wrapper_data" >
-          <p>Vitesse du vent : <span class="wind indicateur"></span></p>
-        </div>
-      </div>
 </div>
          </div>
 

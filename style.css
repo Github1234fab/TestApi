@@ -4,214 +4,130 @@
   box-sizing: border-box;
 }
 Body {
-  background-color: rgb(50, 50, 50);
+  background: var(--colorA);
 }
-.input {
-  background-color: transparent;
-  font-size: 14px;
-  box-shadow: inset 2px 2px 5px rgb(0, 0, 0);
-  color: rgb(234, 234, 234);
-  text-align: center;
-  font-family: roboto condensed;
-  padding: 10px;
-  text-transform: capitalize;
-}
-.input::placeholder {
-  color: rgb(32, 32, 32);
-}
-.indicateur {
-  color: rgb(234, 234, 234);
-  font-family: roboto condensed;
-  font-size: 1.1em;
-  text-transform: capitalize;
-  text-align: center;
+:root {
+  --colorA: #ffffff;
+  --colorB: #e2b659;
+  --colorC: #e2b659;
+  --fontA: kanit;
+  --fontB: robot;
 }
 .wrapper_indicateur {
-  height: 100%;
-  width: 100vw;
-  gap: 10px;
+  background-color: var(--colorA);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-  position: relative;
-  padding: 30px;
-}
-.town {
-  font-size: 40px;
-  font-family: Kanit;
-  color: rgb(234, 245, 12);
-  /* text-align: center; */
-}
-img {
-  height: 40px;
-  width: 40px;
-}
-p {
-  color: rgb(245, 177, 204);
-  font-size: 14px;
-  font-family: roboto condensed;
-  font-weight: 200;
-  width: 100%;
-}
-
-.container_temp,
-.container_hours,
-.container_humidity,
-.container_uv,
-.container_wind {
-  /* box-shadow: inset 0 0 40px rgba(0, 0, 0); */
-  color: rgb(234, 234, 234);
-  padding: 10px;
-  text-align: center;
-  font-family: roboto condensed;
-  height: 50px;
-  transition: height 0.95s;
-  overflow: hidden;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  align-items: center;
-}
-.container_weather {
-  height: auto;
-  width: 100%;
-}
-.banner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom, rgb(255, 146, 44), transparent);
-  box-shadow: 0px 0px 5px rgb(39, 39, 39) inset;
-  color: white;
-  font-size: 0.9em;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-.banner:hover {
-  transform: translateX(2px);
-}
-.wrapper_data {
-  padding: 10px;
-  display: flex;
   justify-content: space-around;
-  flex-direction: column;
-  width: auto;
-  height: auto;
-  align-items: center;
-  align-content: center;
-  background: linear-gradient(to bottom, rgb(51, 51, 51), transparent);
+  padding: 25px;
 }
-.wrapper_data_weather {
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  align-content: center;
-  background: linear-gradient(to bottom, rgb(75, 7, 7) 10%, transparent);
-  gap: 10px;
-  transition: 0.3s ease-in-out;
-}
-.wrapper_data_weather:hover {
-  transform: scale(1.1);
-}
-.icon {
-  margin-top: -18px;
-}
-.expanded {
-  height: 300px;
-  transition: height 0.85s;
-}
-.container_town_img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -1;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  align-content: center;
+.town{
+  margin-top: -20px;
 }
 .town_img {
-  position: fixed;
-  height: 100vh;
-  width: 800px;
-  opacity: 0.5;
+  display: none;
+}
+.input {
   border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-family: var(--fontA);
+  font-size: 1em;
+  box-shadow: rgb(104, 104, 104) inset 1px 1px 3px, rgb(88, 88, 88) inset -1px -1px 3px ;
+  width: 100%;
+margin: auto;
+}
+.delete{
+  display: none;
 }
 .container_input {
-  /* gap: 10px; */
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  margin-left: 30px;
+  padding: 20px;
+  margin-top: -30px;
 }
-.delete {
-  color: rgb(243, 168, 88);
-  margin-left: 10px;
-  margin-top: 10px;
+.container_1day{
+  display: none;
 }
-.container_days_forecast {
+.container_1day_visible {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 20px;
+  width: 95%;
+  font-family: var(--kanit);
+  font-size: 1em;
+  font-weight: 100;
+  color: var(--colorA);
+  box-shadow: 2px 2px 10px rgba(2, 0, 36, 1);
 }
-.container_days_forecast h2 {
-  color: white;
-  font-family: roboto condensed;
+
+h2 {
+  font-size: 2em;
+  padding: 20px;
+  font-family: var(--kanit);
 }
+
+.wrapper_data_weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.weather,
+.indicateur {
+  font-weight: 500;
+  font-family: var(--roboto);
+  text-align: center;
+}
+.container_weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+}
+.icons {
+  font-size: 1.5em;
+  color: var(--colorC);
+  margin-left: 20px;
+}
+
+.wrapper_data {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(185, 184, 184);
+  align-items: left;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.container_datasDay {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .container_8days {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  gap: 5px;
+  border: 1px solid rgb(223, 223, 223);
+  padding: 25px;
 }
 .div_container8days {
-  color: rgb(201, 201, 201);
-  font-family: roboto condensed;
-  font-size: 0.8em;
-  width: auto;
-  height: auto;
+  border: 1px solid rgb(185, 184, 184);
+  margin-bottom: 20px;
   padding: 20px;
-  border: solid 1px rgb(198, 198, 198);
-  background: linear-gradient(to bottom, rgb(51, 51, 51), transparent);
-  transition: 0.2s ease-in-out;
 }
-.div_container8days:hover {
-  background: linear-gradient(to bottom, rgb(57, 28, 28), transparent);
-  transform: scale(1.1);
-}
-
-.container_1day {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 100%;
-}
-.container_1day h2 {
-  color: white;
-  font-family: roboto condensed;
-}
-
-.container_datasDay {
-  display: flex;
-  gap: 5px;
-}
-.div_weatherDescription {
-  color: white;
-  font-family: roboto condensed;
-  font-size: 0.8em;
+.container_days_forecast {
+  margin-top: 50px;
 }
