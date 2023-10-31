@@ -196,7 +196,7 @@ input.addEventListener("keyup", (event) => {
             iconDom.style.height = "250px";
             iconDom.style.width = "250px";
             iconDom.style.marginTop = "-50px";
-            iconDom.style.marginLeft = "-50px";
+            iconDom.style.marginLeft = "-5  0px";
 
             iconDom.src = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
             let weatherIconSpan = document.querySelector(".icon");
