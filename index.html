@@ -1,130 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <script src="https://kit.fontawesome.com/34232c07fe.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/34232c07fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Kanit:wght@100;200;300;400;500;600;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Kanit:wght@100;200;300;400;500;600;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet" />
     <title>Météo</title>
   </head>
+
   <body>
-   
+
+
+
     <div class="wrapper_indicateur">
-
-    
-    
-      <div class="container_town_img">
-        <img class="town_img" src="" alt="">
+      <div class="container_input">
+        <input class="input" type="text" placeholder="Nom de la ville"></input>
+        <span class="delete"><i class="fa-solid fa-delete-left "></i></span>
       </div>
 
 
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 1 DAY FORECAST -->
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 1 DAY FORECAST -->
 
- <div class="container_input">
-      <input class="input" type="text" placeholder="Nom de la ville"></input>
-      <span class="delete"><i class="fa-solid fa-delete-left "></i></span>
-      </div>
+      <!-- container  pour les intitulés en haut de page. -->
+      <div class="container_1day">
+        <div class="section-titles-icon-today">
+          <div class="wrapper-town-weatherType">
+            <h2 class="town"></h2>
+            <h4>En ce moment</h4>
+            <p class="weather"></p>
+            <div class="wrapper_data_weather">
+              <span class="icon"></span>
+            </div>
+          </div>
+        </div>
 
-<div class="container_1day">
-
-    <h2 class="town indicateur"></h2>
-
-  <h2>Aujourd'hui</h2>
- 
-
-
-  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FORECAST -->
-
-
-   <div class="container_weather" >
-        <!-- <div class="banner" data-collapse="false">Prévision</div> -->
+        <!-- Icon de temps du jour en haut de page -->
         <div class="wrapper_data_weather">
-          <p class="weather indicateur"></p>
           <span class="icon"></span>
-         
-        </div>
-          <div class="container_datasDay">
-
- <div class="container_temp" >
-        <!-- <div class="banner" data-collapse="false">Température</div> -->
-        <div class="wrapper_data">
-          <h5><i class="fa-solid fa-temperature-three-quarters icons"></i></h5>
-          <p>Mesurée : <span class="temp indicateur"></span></p>
-          <p>Ressentie : <span class="tempHuman indicateur"></span></p>
-        </div>
-      </div> 
-
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-      <div class="container_hours " >
-        <!-- <div class="banner" data-collapse="false">Heures</div> -->
-        <div class="wrapper_data"  >
-         <h5><i class="fa-solid fa-clock icons"></i></h5>
-          <p>Actuelle : <span class="hour indicateur"></span></p>
-          <p>Levé du soleil : <span class="upSun indicateur"></span></p>
-          <p>Couhé du soleil : <span class="downSun indicateur"></span></p>
         </div>
       </div>
 
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- container pour les 5 datas prévision en ce moment  -->
+ 
+        <div class="container_datasDay">
+          <div class="container_temp">
+            <div class="wrapper_data">
+              <h5>TEMPÉRATURE </span><i class="fa-solid fa-temperature-three-quarters icons"></i></h5>
+              <p>Mesurée : <span class="temp indicateur"></span></p>
+              <p>Ressentie : <span class="tempHuman indicateur"></span></p>
+            </div>
+          </div>
 
-      <div class="container_humidity " >
-        <!-- <div class="banner" data-collapse="false">Taux d'humidité</div> -->
-        <div class="wrapper_data"  >
-            <h5><i class="fa-solid fa-droplet icons"></i></h5>
-          <p>Taux d'humidité : <span class="humidity indicateur"></span></p>
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+          <div class="container_hours ">
+            <!-- <div class="banner" data-collapse="false">Heures</div> -->
+            <div class="wrapper_data">
+              <h5>HORAIRES <i class="fa-solid fa-clock icons"></i></h5>
+              <p>Actuelle : <span class="hour indicateur"></span></p>
+              <p>Levé du soleil : <span class="upSun indicateur"></span></p>
+              <p>Couhé du soleil : <span class="downSun indicateur"></span></p>
+            </div>
+          </div>
+
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+          <div class="container_humidity ">
+            <!-- <div class="banner" data-collapse="false">Taux d'humidité</div> -->
+            <div class="wrapper_data">
+              <h5>HUMIDITÉ <i class="fa-solid fa-droplet icons"></i></h5>
+              <p>Taux d'humidité : <span class="humidity indicateur"></span></p>
+            </div>
+          </div>
+
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+          <div class="container_uv ">
+            <!-- <div class="banner data-collapse="false"">indice UV</div> -->
+            <div class="wrapper_data">
+              <h5>UV <i class="fa-solid fa-sun icons"></i></h5>
+              <p>Indice UV : <span class="uv indicateur"></span></p>
+            </div>
+          </div>
+
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+          <div class="container_wind ">
+            <!-- <div class="banner" data-collapse="false">Vitesse du vent</div> -->
+            <div class="wrapper_data">
+              <h5>VENT<i class="fa-solid fa-wind icons"></i></h5>
+              <p>Vitesse du vent : <span class="wind indicateur"></span></p>
+            </div>
+          </div>
         </div>
-      </div>
+    
 
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-      <div class="container_uv " >
-        <!-- <div class="banner data-collapse="false"">indice UV</div> -->
-        <div class="wrapper_data"  >
-           <h5><i class="fa-solid fa-sun icons"></i></h5>
-          <p>Indice UV : <span class="uv indicateur"></span></p>
-        </div>
-      </div>
-
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-      <div class="container_wind " >
-        <!-- <div class="banner" data-collapse="false">Vitesse du vent</div> -->
-        <div class="wrapper_data" >
-           <h5><i class="fa-solid fa-wind icons"></i></h5>
-          <p>Vitesse du vent : <span class="wind indicateur"></span></p>
-        </div>
-      </div>
-</div>
-      </div>
 
       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DATAS-->
-    
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 8 DAYS FORECAST -->
 
 
 
+      <div class="container_days_forecast">
+        <div class="container_8days">
+          <!-- <h2>Prévisions à 7 jours</h2> -->
+        </div>
+      </div>
+    </div>
 
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 8 DAYS FORECAST -->
-
-
-
-<div class="container_days_forecast">
-  <h2>Prévisions à 7 jours</h2>
- 
-<div class="container_8days">
-
- <!-- <div class="div_forecast"></div> -->
-</div>
-</div>
-         </div>
 
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
+
 </html>

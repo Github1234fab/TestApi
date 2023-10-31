@@ -106,7 +106,9 @@ input.addEventListener("keyup", (event) => {
 
     async function fetchData() {
       try {
-        const response = await fetch(`https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6dpP6ZcR-gr6EVNQLNZ3oND9ou7ucZL48kpa_zHpaVo`);
+        const response = await fetch(
+          `https://api.unsplash.com/search/photos?query=${inputValue}&client_id=6dpP6ZcR-gr6EVNQLNZ3oND9ou7ucZL48kpa_zHpaVo`
+        );
         const data = await response.json();
         console.log(data);
         let img = document.querySelector(".town_img");
@@ -153,6 +155,8 @@ input.addEventListener("keyup", (event) => {
               let dayOfWeek = date.toLocaleDateString("fr-FR", options);
 
               let divWeatherDate = document.createElement("div");
+              divWeatherDate.style.fontSize = "1.5em";
+              divWeatherDate.style.fontWeight = "bold";
               divWeatherDate.innerHTML = dayOfWeek;
               divWeatherDate.classList.add("div_container8days");
               container8days.appendChild(divWeatherDate);
@@ -189,9 +193,11 @@ input.addEventListener("keyup", (event) => {
             let weather = data.current.weather[0].description;
             let weatherIcon = data.current.weather[0].icon;
             let iconDom = document.createElement("img");
-            iconDom.style.height = "180px";
-            iconDom.style.width = "180px";
-            iconDom.style.marginTop = "-45px";
+            iconDom.style.height = "250px";
+            iconDom.style.width = "250px";
+            iconDom.style.marginTop = "-50px";
+            iconDom.style.marginLeft = "-50px";
+
             iconDom.src = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
             let weatherIconSpan = document.querySelector(".icon");
             weatherIconSpan.innerHTML = "";
@@ -245,5 +251,4 @@ containers.forEach((container) => {
 let inputDelete = document.querySelector(".delete");
 inputDelete.addEventListener("click", function () {
   input.value = "";
-
 });
