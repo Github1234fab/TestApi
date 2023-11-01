@@ -1,98 +1,3 @@
-// let array = [];
-
-// console.log(array);
-
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "091a7623a2mshfe940e4a900ef7bp1a0aa8jsn21d9e18b7442",
-//     "X-RapidAPI-Host": "asos2.p.rapidapi.com",
-//   },
-// };
-
-// fetch("https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=48&country=US&sort=freshness&currency=USD&sizeSchema=US&lang=en-US", options)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     // Stocke les données dans le tableau
-//     array.push(data.products);
-
-//     // Affiche le tableau dans la console
-//     console.log(array);
-//   })
-//   .catch((err) => console.error(err));
-
-//api taux de co2 pour voyage----------------------------------------------
-
-// let inputKm = document.getElementById("inputKm");
-// console.log(inputKm);
-// let distance ;
-// console.log(distance);
-
-// inputKm.addEventListener("mouseleave", () => {
-
-//   console.log(inputKm.value);
-
-//   distance = inputKm.value;
-//     console.log(distance);
-
-// })
-// // const encodedParams = new URLSearchParams();
-// // encodedParams.append("distance", "5");
-// // encodedParams.append("vehicle", "SmallDieselCar");
-// const encodedParams = new URLSearchParams();
-// encodedParams.append("distance", distance);
-// encodedParams.append("vehicle", "SmallDieselCar");
-
-// const options = {
-//   method: "POST",
-//   headers: {
-//     "content-type": "application/x-www-form-urlencoded",
-//     "X-RapidAPI-Key": "091a7623a2mshfe940e4a900ef7bp1a0aa8jsn21d9e18b7442",
-//     "X-RapidAPI-Host": "tracker-for-carbon-footprint-api.p.rapidapi.com",
-//   },
-//   body: encodedParams,
-// };
-
-// fetch("https://tracker-for-carbon-footprint-api.p.rapidapi.com/carTravel", options)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     array.push(data);
-//   console.log(array)})
-//   .catch((err) => console.error(err));
-
-// const options = {
-//   method: "POST",
-//   headers: {
-//     "content-type": "application/json",
-//     "X-RapidAPI-Key": "091a7623a2mshfe940e4a900ef7bp1a0aa8jsn21d9e18b7442",
-//     "X-RapidAPI-Host": "travel-co2-climate-carbon-emissions.p.rapidapi.com",
-//   },
-//   body: '{"from":"Paris, France","to":"Barcelona, Spain","ways":2,"people":2,"language":"en","title":"Comparing flying and public transport from Paris to Barcelona.","transport_types":["flying","public-transport"]}',
-// };
-
-// fetch("https://travel-co2-climate-carbon-emissions.p.rapidapi.com/api/v1/simpletrips", options)
-//   .then((response) => response.json())
-//   .then((response) => console.log(response))
-//   .catch((err) => console.error(err));
-
-// let Token = "77318a42b3d89e38aaccf4d3829c357c197b8601be0095d98d129c5b9f2ef9b8";
-
-// fetch("http://api.meteo-concept.com/api/ephemeride/1?token=77318a42b3d89e38aaccf4d3829c357c197b8601be0095d98d129c5b9f2ef9b8&insee=35238")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((err) => console.log(err));
-
-// 77318a42b3d89e38aaccf4d3829c357c197b8601be0095d98d129c5b9f2ef9b8
-
-// const ApiKey = "9183577a9b461d4be6a90ea944a7cf2b";
-// let url = "https://api.openweathermap.org/data/2.5/weather?q=London&appid=9183577a9b461d4be6a90ea944a7cf2b&units=metric&lang=fr";
-
-// +++++++++++++++++++++++++++++++++++++++++ REQUETE POUR OBTENIR COORDONNÉES AVEC COMME INPUT LE NOM DE VILLE
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++APPLI MÉTÉO
-
 let input = document.querySelector(".input");
 input.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) {
@@ -101,7 +6,12 @@ input.addEventListener("keyup", (event) => {
 
     let containerOneDay = document.querySelector(".container_1day");
     containerOneDay.classList.add("container_1day_visible");
+    let wrapperDatas = document.querySelector(".container_datasDay");
 
+    wrapperDatas.style.display = "flex";
+
+
+    
     // +++++++++++++++++++++++++++++++++++++++++ REQUETE UNSPLASH POUR PHOTO DE LA VILLE
 
     async function fetchData() {
@@ -165,6 +75,8 @@ input.addEventListener("keyup", (event) => {
 
               let divWeatherIcon = document.createElement("img");
               divWeatherIcon.src = "http://openweathermap.org/img/wn/" + weatherDailyIcon + "@2x.png";
+              divWeatherIcon.style.height = "100px";
+               divWeatherIcon.style.width= "100px";
               divWeatherDate.appendChild(divWeatherIcon);
 
               let h4WeatherDescription = document.createElement("h4");
