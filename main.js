@@ -7,11 +7,13 @@ input.addEventListener("keyup", (event) => {
     let containerOneDay = document.querySelector(".container_1day");
     containerOneDay.classList.add("container_1day_visible");
     let wrapperDatas = document.querySelector(".container_datasDay");
+    let titlePrevision7jours = document.querySelector(".container_days_forecast");
+    titlePrevision7jours.classList.add("container_days_forecast_visible");
+    let previsionTitle = document.querySelector(".prevision-title");
+    previsionTitle.classList.add("prevision-title-visible");
 
     wrapperDatas.style.display = "flex";
 
-
-    
     // +++++++++++++++++++++++++++++++++++++++++ REQUETE UNSPLASH POUR PHOTO DE LA VILLE
 
     async function fetchData() {
@@ -50,6 +52,7 @@ input.addEventListener("keyup", (event) => {
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
+            // console.log(data.daily.weather[1]);
 
             let container8days = document.querySelector(".container_8days");
             container8days.innerHTML = "";
@@ -65,8 +68,10 @@ input.addEventListener("keyup", (event) => {
               let dayOfWeek = date.toLocaleDateString("fr-FR", options);
 
               let divWeatherDate = document.createElement("div");
-              divWeatherDate.style.fontSize = "1.5em";
+              divWeatherDate.style.fontSize = "1em";
               divWeatherDate.style.fontWeight = "bold";
+              divWeatherDate.style.color = "white";
+                   divWeatherDate.style.textTransform = "Capitalize";
               divWeatherDate.innerHTML = dayOfWeek;
               divWeatherDate.classList.add("div_container8days");
               container8days.appendChild(divWeatherDate);
@@ -75,8 +80,8 @@ input.addEventListener("keyup", (event) => {
 
               let divWeatherIcon = document.createElement("img");
               divWeatherIcon.src = "http://openweathermap.org/img/wn/" + weatherDailyIcon + "@2x.png";
-              divWeatherIcon.style.height = "100px";
-               divWeatherIcon.style.width= "100px";
+              divWeatherIcon.style.height = "50px";
+              divWeatherIcon.style.width = "50px";
               divWeatherDate.appendChild(divWeatherIcon);
 
               let h4WeatherDescription = document.createElement("h4");
@@ -105,10 +110,10 @@ input.addEventListener("keyup", (event) => {
             let weather = data.current.weather[0].description;
             let weatherIcon = data.current.weather[0].icon;
             let iconDom = document.createElement("img");
-            iconDom.style.height = "250px";
-            iconDom.style.width = "250px";
-            iconDom.style.marginTop = "-50px";
-            iconDom.style.marginLeft = "-50px";
+            iconDom.style.height = "150px";
+            iconDom.style.width = "150px";
+            iconDom.style.marginTop = "-30px";
+            // iconDom.style.marginLeft = "-50px";
 
             iconDom.src = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
             let weatherIconSpan = document.querySelector(".icon");
